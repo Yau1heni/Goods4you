@@ -1,0 +1,82 @@
+@import url('./variables/colors.css');
+@import url('./variables/fonts.css');
+
+@font-face {
+    font-family: 'jost-bold';
+    font-style: normal;
+    font-weight: 700;
+    src: url('@/assets/fonts/jost-bold.woff2') format('woff2'),
+    url('@/assets/fonts/jost-bold.woff') format('woff'),
+    url('@/assets/fonts/jost-bold.ttf') format('truetype');
+    unicode-range: U+21-5F,U+61-7E,U+2013,U+2014,U+2018,U+2019,U+201C,U+201D,U+2026;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'jost-semibold';
+    font-style: normal;
+    font-weight: 600;
+    src: url('@/assets/fonts/jost-semibold.woff2') format('woff2'),
+    url('@/assets/fonts/jost-semibold.woff') format('woff'),
+    url('@/assets/fonts/jost-semibold.ttf') format('truetype');
+    unicode-range: U+21-5F,U+61-7E,U+2013,U+2014,U+2018,U+2019,U+201C,U+201D,U+2026;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'jost-regular';
+    font-style: normal;
+    font-weight: 400;
+    src: url('@/assets/fonts/jost-regular.woff2') format('woff2'),
+    url('@/assets/fonts/jost-regular.woff') format('woff'),
+    url('@/assets/fonts/jost-regular.ttf') format('truetype');
+    unicode-range: U+21-5F,U+61-7E,U+2013,U+2014,U+2018,U+2019,U+201C,U+201D,U+2026;
+    font-display: swap;
+}
+
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+input,
+button,
+select,
+textarea,
+optgroup,
+option {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    color: inherit;
+}
+
+a, a:link {
+    text-decoration: none;
+}
+a:hover  {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-regular), sans-serif;
+    color: var(--color-white);
+    background-color: var(--color-white);
+}
+

@@ -1,0 +1,12 @@
+:root {
+    --font-size-s: 14px;
+    --font-size-m: 16px;
+    --font-size-l: 18px;
+    --font-size-xl: 24px;
+    --font-size-2xl: 30px;
+    --font-size-3xl: 36px;
+
+    --font-family-bold: "jost-bold";
+    --font-family-regular: "jost-semibold";
+    --font-family-extra-bold: "jost-regular";
+}
