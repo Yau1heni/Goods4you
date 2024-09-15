@@ -1,0 +1,6 @@
+.title {
+    font-family: var(--font-family-bold), sans-serif;
+    font-size: var(--font-size-2xl);
+    line-height: 147%;
+    cursor: pointer;
+}

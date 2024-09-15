@@ -1,0 +1,13 @@
+.accordion {
+    border-radius: 5px;
+    width: 100%;
+}
+
+.bar {
+    height: 1px;
+    background-color: var(--color-white);
+}
+
+.bar:first-child {
+    display: none;
+}

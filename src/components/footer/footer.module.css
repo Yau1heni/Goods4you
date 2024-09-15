@@ -1,0 +1,21 @@
+.footer {
+    background-color: var(--color-gray-900);
+}
+
+.footerContent {
+    padding: 23px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navItem {
+    font-family: var(--font-family-semi-bold), sans-serif;
+    font-size: var(--font-size-s);
+    line-height: 143%;
+    cursor: pointer;
+}
+
+.navItem:first-child {
+    padding-right: 40px;
+}

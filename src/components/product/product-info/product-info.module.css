@@ -1,0 +1,102 @@
+.productInfo {
+    max-width: 620px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.title {
+    font-family: var(--font-family-semi-bold), sans-serif;
+    font-size: var(--font-size-3xl);
+    line-height: 156%;
+    color: var(--color-gray-900);
+}
+
+.metaData {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stock {
+    position: relative;
+    font-family: var(--font-family-regular), sans-serif;
+    font-size: var(--font-size-l);
+    line-height: 133%;
+    color: var(--color-orange);
+    padding: 12px 0;
+}
+
+.stock::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-gray-500);
+}
+
+.stock::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-gray-500);
+}
+
+.description {
+    font-family: var(--font-family-regular), sans-serif;
+    font-size: var(--font-size-l);
+    line-height: 167%;
+    color: var(--color-gray-900);
+}
+
+.textSecondary {
+    font-family: var(--font-family-regular), sans-serif;
+    font-size: var(--font-size-s);
+    line-height: 150%;
+    color: var(--color-gray-600);
+    margin-bottom: 12px;
+}
+
+.crossedText {
+    text-decoration: line-through;
+}
+
+.productFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background-color: var(--color-gray-100);
+}
+
+.priceContainer {
+    display: flex;
+    align-items: center;
+}
+
+.price {
+    padding: 0 20px 0 24px;
+    position: relative;
+    color: var(--color-gray-900);
+}
+
+.priceContainer > *:first-child::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: var(--color-gray-200);
+}
+
+.discount {
+    font-family: var(--font-family-semi-bold), sans-serif;
+    font-size: var(--font-size-s);
+    line-height: 150%;
+    color: var(--color-gray-600);
+}

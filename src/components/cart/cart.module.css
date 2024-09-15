@@ -1,0 +1,61 @@
+.cart {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 48px 0;
+}
+
+.cartContent {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.textContainer {
+    width: 356px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.textGray {
+    color: var(--color-gray-500);
+}
+
+.textDark {
+    color: var(--color-gray-900);
+}
+
+.textSmall {
+    font-family: var(--font-family-regular), sans-serif;
+    font-size: var(--font-size-l);
+    line-height: 167%;
+}
+
+.textMedium {
+    font-family: var(--font-family-semi-bold), sans-serif;
+    font-size: var(--font-size-l);
+    line-height: 167%;
+    margin-bottom: 20px;
+}
+
+.textLarge {
+    font-family: var(--font-family-semi-bold), sans-serif;
+    font-size: var(--font-size-xl);
+    line-height: 150%;
+}
+
+.textTotalPrice {
+    position: relative;
+}
+
+.textTotalPrice::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background-color: var(--color-gray-200);
+}
