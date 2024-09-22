@@ -3,26 +3,28 @@ import styles from './catalog-card.module.css'
 import {CardFooter} from "@/components/catalog/catalog-list/catalog-card/card-footer/card-footer.tsx";
 import {Link} from "react-router-dom";
 import {Paths} from "@/pages";
-import {CatalogCardItem} from "@/mock-data/catalog.types.ts";
+import {UpdatedProducts} from "@/types";
+import {calculatePriceWithDiscount} from "@/utils/calculate-price-with-discont.ts";
 
 type CatalogCardProps = {
-    cardData: CatalogCardItem
+    cardData: UpdatedProducts
 }
 
 export const CatalogCard: FC<CatalogCardProps> = ({cardData}) => {
-    const {image, price, text} = cardData
+    const {thumbnail, price, title, discountPercentage, id, quantity} = cardData
 
-    const productPath = Paths.PRODUCT.replace(':productId', '12');
+    const productPath = Paths.PRODUCT.replace(':productId', String(id));
+    const finalPrice = calculatePriceWithDiscount(price, discountPercentage)
 
     return (
         <div className={styles.catalogCard}>
-            <Link to={productPath}>
+            <Link to={productPath} state={{basketQuantity: quantity}}>
                 <div className={styles.image}>
                     <div className={styles.overlay}>Show details</div>
-                    <img src={image} alt='catalog-item' width={370} height={300}/>
+                    <img src={thumbnail} alt='catalog-item' width={370} height={300}/>
                 </div>
             </Link>
-            <CardFooter text={text} price={price}/>
+            <CardFooter text={title} price={finalPrice} basketQuantity={quantity}/>
         </div>
     );
 };

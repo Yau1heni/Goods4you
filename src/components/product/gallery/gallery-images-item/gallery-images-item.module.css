@@ -1,0 +1,11 @@
+.image {
+    border: 1px solid var(--color-gray-200);
+}
+
+.button {
+    cursor: pointer;
+}
+
+.active {
+    border: 1px solid var(--color-violet);
+}

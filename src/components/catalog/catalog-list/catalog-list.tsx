@@ -1,10 +1,10 @@
 import {FC} from 'react';
 import styles from './catalog-list.module.css'
 import {CatalogCard} from "./catalog-card/catalog-card.tsx";
-import {CatalogCardItem} from "@/mock-data/catalog.types.ts";
+import {UpdatedProducts} from "@/types";
 
 type CatalogListProps = {
-    catalog: CatalogCardItem[]
+    catalog: UpdatedProducts[]
 }
 
 export const CatalogList: FC<CatalogListProps> = ({catalog}) => {

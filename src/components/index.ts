@@ -9,5 +9,8 @@ export {Product} from './product/product.tsx'
 export {Cart} from './cart/cart.tsx'
 export {Accordion} from './accordion/accordion.tsx'
 export {Rating} from './rating/rating.tsx'
+export {Loader} from './loader/loader.tsx'
+export {GlobalStatus} from './global-status/global-status.tsx'
+export {LinkWithCounter} from './link-with-counter/link-with-counter.tsx'
 
 // export {} from './'
