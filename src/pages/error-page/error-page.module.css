@@ -1,0 +1,14 @@
+.errorPage {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.text {
+    color: var(--color-gray-900);
+    font-family: var(--font-family-semi-bold),sans-serif;
+}
