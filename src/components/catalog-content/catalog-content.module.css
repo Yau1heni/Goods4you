@@ -1,40 +1,40 @@
 .catalogContent {
-    background-color: var(--color-violet);
+  background-color: var(--color-violet);
 }
 
 .backgroundImageContainer {
-    background-image: url("@/assets/images/back-text.png");
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+  background-image: url('@/assets/images/back-text.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .contentContainer {
-    flex-direction: column;
-    align-items: start;
-    gap: 30px;
-    padding: 115px 0;
-    position: relative;
+  flex-direction: column;
+  align-items: start;
+  gap: 30px;
+  padding: 115px 0;
+  position: relative;
 }
 
 .contentContainer::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 1px;
-    background-color: var(--color-white);
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-white);
 }
 
 .title {
-    font-family: var(--font-family-regular), sans-serif;
-    font-size: var(--font-size-3xl);
-    line-height: 139%;
+  font-family: var(--font-family-regular), sans-serif;
+  font-size: var(--font-size-3xl);
+  line-height: 139%;
 }
 
 .text {
-    font-family: var(--font-family-semi-bold), sans-serif;
-    font-size: var(--font-size-m);
-    line-height: 150%;
+  font-family: var(--font-family-semi-bold), sans-serif;
+  font-size: var(--font-size-m);
+  line-height: 150%;
 }

@@ -1,9 +1,9 @@
 .title {
-    font-family: var(--font-family-bold), sans-serif;
-    font-size: var(--font-size-3xl);
-    line-height: 156%;
+  font-family: var(--font-family-bold), sans-serif;
+  font-size: var(--font-size-3xl);
+  line-height: 156%;
 }
 
 .dark {
-    color: var(--color-gray-900);
+  color: var(--color-gray-900);
 }

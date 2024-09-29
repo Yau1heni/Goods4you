@@ -1,59 +1,59 @@
 .accordionItem {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .bar {
-    height: 1px;
-    background-color: var(--color-white);
+  height: 1px;
+  background-color: var(--color-white);
 }
 
 .accordionTrigger {
-    padding: 20px 0;
-    cursor: pointer;
-    width: 100%;
+  padding: 20px 0;
+  cursor: pointer;
+  width: 100%;
 }
 
 .accordionTitleContainer {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .accordionTitle {
-    font-family: var(--font-family-regular),sans-serif;
-    font-size: var(--font-size-xl);
-    line-height: 125%;
+  font-family: var(--font-family-regular), sans-serif;
+  font-size: var(--font-size-xl);
+  line-height: 125%;
 }
 
 .svg {
-    margin-right: 1px;
+  margin-right: 1px;
 }
 
 .rotateSvg {
-    transition: transform 0.5s ease;
-    transform: rotate(45deg);
+  transition: transform 0.5s ease;
+  transform: rotate(45deg);
 }
 
 .rotateSvgDefault {
-    transition: transform 0.5s ease;
-    transform: rotate(0deg);
+  transition: transform 0.5s ease;
+  transform: rotate(0deg);
 }
 
 .accordionContent {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out;
-    padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+  padding: 0;
 }
 
 .accordionContent::after {
-    content: "";
-    display: block;
-    height: 0;
-    padding: 10px;
+  content: '';
+  display: block;
+  height: 0;
+  padding: 10px;
 }
 
 .accordionContent.open {
-    max-height: 500px;
-    transition: max-height 0.5s ease-in;
+  max-height: 500px;
+  transition: max-height 0.5s ease-in;
 }

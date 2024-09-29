@@ -1,37 +1,37 @@
 .catalogCard {
-    color: var(--color-gray-900);
-    border: 1px solid var(--color-gray-200);
-    border-radius: 6px;
-    width: 370px;
-    cursor: pointer;
+  color: var(--color-gray-900);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 6px;
+  width: 370px;
+  cursor: pointer;
 }
 
 .image {
-    position: relative;
+  position: relative;
 }
 
 .overlay {
-    font-family: var(--font-family-bold), sans-serif;
-    font-size: var(--font-size-xl);
-    color: rgba(255, 255, 255, 0.8);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.3s;
+  font-family: var(--font-family-bold), sans-serif;
+  font-size: var(--font-size-xl);
+  color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .image:hover::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.5);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .image:hover .overlay {
-    opacity: 1;
- }
+  opacity: 1;
+}

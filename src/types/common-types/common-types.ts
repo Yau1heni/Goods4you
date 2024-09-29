@@ -1,10 +1,10 @@
 export type Nullable<T> = T | null;
 
 export enum Theme {
-    DARK = 'dark',
-    LIGHT = 'light',
+  DARK = 'dark',
+  LIGHT = 'light',
 }
 
 export enum StatusCode {
-    UNAUTHORIZED = 401,
+  UNAUTHORIZED = 401,
 }
