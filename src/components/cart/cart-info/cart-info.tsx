@@ -2,6 +2,7 @@ import {FC} from 'react';
 import styles from './cart-info.module.css'
 import {clsx} from "clsx";
 import {Cart, Nullable} from "@/types";
+import {roundToTwoDecimals} from "@/utils";
 
 type CartInfoProps = {
     carts: Nullable<Cart>
@@ -20,7 +21,7 @@ export const CartInfo: FC<CartInfoProps> = ({carts}) => {
             </div>
             <div className={clsx(styles.textContainer, styles.textTotalPrice)}>
                 <p className={clsx(styles.textLarge, styles.textGray)}>Total price</p>
-                <p className={clsx(styles.textLarge, styles.textDark)}>${carts?.discountedTotal || 0}</p>
+                <p className={clsx(styles.textLarge, styles.textDark)}>${roundToTwoDecimals(carts?.discountedTotal || 0)}</p>
             </div>
         </div>
     );

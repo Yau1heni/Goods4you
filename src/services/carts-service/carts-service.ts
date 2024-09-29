@@ -1,11 +1,17 @@
 import {instance} from '../axios-config/axios-config.ts'
-import {Cart, Carts} from "@/types";
+import {Cart, Carts, UpdateCartPayload} from "@/types";
 
 export const cartsServices = {
-    getCarts(data: { userId: string }): Promise<Cart> {
-        return instance.get<Carts>(`/carts/user/${data.userId}`)
-            .then((response) => {
-                return response.data.carts[0];
-            });
+    async getCarts(data: { userId: number }): Promise<Cart> {
+        const response = await instance.get<Carts>(`/carts/user/${data.userId}`);
+        return response.data.carts[0];
+    },
+    async updateCart(data: UpdateCartPayload): Promise<Cart> {
+        const payload = {
+            merge: false,
+            products: data.products,
+        }
+        const response = await instance.put<Cart>(`/carts/${data.id}`, payload);
+        return response.data;
     },
 };

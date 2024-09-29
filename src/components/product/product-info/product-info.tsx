@@ -2,16 +2,19 @@ import styles from './product-info.module.css'
 import {clsx} from "clsx";
 import {AddedControl, Button, Rating} from "@/components";
 import {Paths} from "@/pages";
-import {Link as RouterLink, useLocation} from 'react-router-dom';
+import {Link as RouterLink} from 'react-router-dom';
 import {FC} from 'react';
-import {Product} from "@/types";
-import {calculatePriceWithDiscount} from "@/utils/calculate-price-with-discont.ts";
+import {UpdatedProduct} from "@/types";
+import {calculatePriceWithDiscount, roundToTwoDecimals} from "@/utils";
+import {addProductToCart} from "@/store";
+import {useAppDispatch} from "@/hooks";
 
 type ProductInfoProps = {
-    product: Product;
+    product: UpdatedProduct;
+    refetch: () => void;
 }
 
-export const ProductInfo: FC<ProductInfoProps> = ({product}) => {
+export const ProductInfo: FC<ProductInfoProps> = ({product, refetch}) => {
     const {
         rating,
         title,
@@ -22,11 +25,20 @@ export const ProductInfo: FC<ProductInfoProps> = ({product}) => {
         discountPercentage,
         description,
         stock,
+        id,
+        quantity
     } = product
 
-    const {state: locationState} = useLocation();
+    const dispatch = useAppDispatch()
 
     const finalPrice = calculatePriceWithDiscount(price, discountPercentage)
+
+    const onAddHandler = () => {
+        dispatch(addProductToCart({product: {id, quantity: quantity+1}}))
+        if (refetch) {
+            refetch()
+        }
+    }
 
     return (
         <div className={styles.productInfo}>
@@ -53,7 +65,7 @@ export const ProductInfo: FC<ProductInfoProps> = ({product}) => {
                 <div className={styles.priceContainer}>
                     <div className={styles.price}>
                         <h3>${finalPrice}</h3>
-                        <h3 className={clsx(styles.textSecondary, styles.crossedText)}>${price}</h3>
+                        <h3 className={clsx(styles.textSecondary, styles.crossedText)}>${roundToTwoDecimals(price)}</h3>
                     </div>
                     <div className={styles.price}>
                         <p className={styles.textSecondary}>
@@ -61,9 +73,9 @@ export const ProductInfo: FC<ProductInfoProps> = ({product}) => {
                         </p>
                     </div>
                 </div>
-                {locationState.basketQuantity === 0
-                    ? <Button>Add to cart</Button>
-                    : <AddedControl amountProducts={locationState.basketQuantity}/>
+                {quantity === 0
+                    ? <Button disabled={stock === 0} onClick={onAddHandler}>Add to cart</Button>
+                    : <AddedControl stock={stock} refetch={refetch} id={id} quantityProducts={quantity}/>
                 }
             </div>
         </div>

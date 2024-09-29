@@ -30,7 +30,7 @@ export type Product = {
     images: string[];
 }
 
-export type UpdatedProducts = Product & { quantity: number }
+export type UpdatedProduct = Product & { quantity: number }
 
 type Meta = {
     createdAt: string;

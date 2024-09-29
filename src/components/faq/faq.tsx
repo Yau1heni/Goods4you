@@ -2,7 +2,7 @@ import styles from './faq.module.css'
 import {clsx} from "clsx";
 import commonStyles from "@/styles/common.module.css";
 import {TitleSection, Accordion} from "@/components";
-import {faqData} from "@/mock-data/faq-data.ts";
+import {faqData} from "./faq-data.ts";
 
 export const Faq = () => {
     return (

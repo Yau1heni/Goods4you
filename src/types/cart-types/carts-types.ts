@@ -7,7 +7,7 @@ export type Carts = {
 
 export type Cart = {
     id: number;
-    products: CartProduct[];
+    products: CartProduct[]
     total: number;
     discountedTotal: number;
     userId: number;
@@ -17,11 +17,22 @@ export type Cart = {
 
 export type CartProduct = {
     id: number;
-    title: string;
-    price: number;
     quantity: number;
-    total: number;
-    discountPercentage: number;
-    discountedTotal: number;
-    thumbnail: string;
+    title?: string;
+    price?: number;
+    total?: number;
+    discountPercentage?: number;
+    discountedTotal?: number;
+    thumbnail?: string;
+}
+
+export type UpdateCartPayload = {
+    id: number;
+    products: CartProduct[];
+}
+
+export enum UpdateMode {
+    INCREASE = 'increase',
+    DECREASE = 'decrease',
+    DELETE = 'delete',
 }

@@ -1,7 +1,12 @@
-import { createSlice } from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 
-const initialState = {
-    isLoading: false,
+type MainState = {
+    isLoading: boolean;
+    isError: boolean;
+}
+
+const initialState: MainState = {
+    isLoading: true,
     isError: false,
 };
 
@@ -38,4 +43,4 @@ const slice = createSlice({
     },
 });
 
-export const { reducer: mainReducer, selectors: mainSelectors } = slice;
+export const {reducer: mainReducer, selectors: mainSelectors} = slice;

@@ -1,30 +1,31 @@
 import {FC} from 'react';
 import styles from './catalog-card.module.css'
-import {CardFooter} from "@/components/catalog/catalog-list/catalog-card/card-footer/card-footer.tsx";
+import {CardFooter} from "./card-footer/card-footer.tsx";
 import {Link} from "react-router-dom";
 import {Paths} from "@/pages";
-import {UpdatedProducts} from "@/types";
-import {calculatePriceWithDiscount} from "@/utils/calculate-price-with-discont.ts";
+import {UpdatedProduct} from "@/types";
+import {calculatePriceWithDiscount} from "@/utils";
 
 type CatalogCardProps = {
-    cardData: UpdatedProducts
+    cardData: UpdatedProduct
+    refetch: () => void;
 }
 
-export const CatalogCard: FC<CatalogCardProps> = ({cardData}) => {
-    const {thumbnail, price, title, discountPercentage, id, quantity} = cardData
+export const CatalogCard: FC<CatalogCardProps> = ({cardData, refetch}) => {
+    const {thumbnail, price, discountPercentage, id} = cardData
 
     const productPath = Paths.PRODUCT.replace(':productId', String(id));
     const finalPrice = calculatePriceWithDiscount(price, discountPercentage)
 
     return (
         <div className={styles.catalogCard}>
-            <Link to={productPath} state={{basketQuantity: quantity}}>
+            <Link to={productPath}>
                 <div className={styles.image}>
                     <div className={styles.overlay}>Show details</div>
                     <img src={thumbnail} alt='catalog-item' width={370} height={300}/>
                 </div>
             </Link>
-            <CardFooter text={title} price={finalPrice} basketQuantity={quantity}/>
+            <CardFooter refetch={refetch} cardData={cardData} price={finalPrice} />
         </div>
     );
 };

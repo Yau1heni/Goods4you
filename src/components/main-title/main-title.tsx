@@ -9,6 +9,6 @@ type MainTitleProps = {
 
 export const MainTitle: FC<MainTitleProps> = ({title}) => {
     return (
-        <RouterLink className={styles.title} to={Paths.CATALOG}>{title}</RouterLink>
+        <RouterLink className={styles.title} to={Paths.CATALOG}><h1>{title}</h1></RouterLink>
     );
 };

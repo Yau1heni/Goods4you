@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "run test:unit": "vitest"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
@@ -47,12 +48,13 @@
     "eslint-plugin-react-refresh": "^0.4.9",
     "eslint-plugin-storybook": "^0.8.0",
     "globals": "^15.9.0",
+    "jsdom": "^25.0.1",
     "storybook": "8.3.2",
     "storybook-addon-remix-react-router": "^3.0.0",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.1",
-    "vite-plugin-svgr": "^4.2.0"
+    "vite-plugin-svgr": "^4.2.0",
+    "vitest": "^2.1.1"
   },
   "eslintConfig": {
     "extends": [

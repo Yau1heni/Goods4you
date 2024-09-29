@@ -5,5 +5,4 @@ export const createMainAsyncThunk = createAsyncThunk.withTypes<{
     state: RootState
     dispatch: AppDispatch
     rejectValue: unknown;
-    extra?: unknown;
 }>()
