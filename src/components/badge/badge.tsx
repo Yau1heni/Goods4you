@@ -3,7 +3,7 @@ import styles from './badge.module.css'
 import Basket from '@/assets/svg/basket.svg?react'
 
 type BadgeProps = {
-    value: number
+    value: NonNullable<number>
 }
 
 export const Badge: FC<BadgeProps> = (props) => {

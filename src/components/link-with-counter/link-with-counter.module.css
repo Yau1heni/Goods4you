@@ -1,0 +1,9 @@
+.navItem {
+    display: flex;
+    gap: 6px;
+    font-family: var(--font-family-semi-bold), sans-serif;
+    font-size: var(--font-size-s);
+    line-height: 143%;
+    cursor: pointer;
+    color: var(--color-white);
+}

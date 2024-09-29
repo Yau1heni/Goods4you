@@ -1,11 +1,14 @@
 import styles from './cart-list.module.css'
 import {CartItem} from "./cart-item/cart-item.tsx";
-import {cartsData} from "@/mock-data/carts-data.ts";
+import {useAppSelector} from "@/hooks";
+import {cartsSelectors} from "@/store";
 
 
 export const CartList = () => {
-    const cartList = cartsData.map(cart => (
-        <CartItem key={cart.id} cart={cart}/>
+    const carts = useAppSelector(cartsSelectors.carts)
+
+    const cartList = carts?.products.map(product => (
+        <CartItem key={product.id} product={product}/>
     ))
 
     return (
