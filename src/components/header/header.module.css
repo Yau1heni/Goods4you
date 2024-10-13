@@ -1,23 +1,22 @@
 .header {
-    background-color: var(--color-violet);
+  background-color: var(--color-violet);
 }
 
 .headerContent {
-    padding: 23px 0;
+  padding: 23px 0;
 }
 
 .nav {
-    display: flex;
-    align-items: center;
-    gap: 40px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
 }
 
 .navItem {
-    display: flex;
-    gap: 6px;
-    font-family: var(--font-family-semi-bold), sans-serif;
-    font-size: var(--font-size-s);
-    line-height: 143%;
-    cursor: pointer;
+  display: flex;
+  gap: 6px;
+  font-family: var(--font-family-semi-bold), sans-serif;
+  font-size: var(--font-size-s);
+  line-height: 143%;
+  cursor: pointer;
 }
-

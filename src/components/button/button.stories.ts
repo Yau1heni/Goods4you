@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import {Button} from "./button";
+import { Button } from './button';
 
-import '@/styles/index.css'
+import '@/styles/index.css';
 
 const meta = {
   title: 'atom/Button',
@@ -11,9 +11,7 @@ const meta = {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  argTypes: {
-
-  },
+  argTypes: {},
   args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
 
@@ -33,4 +31,3 @@ export const DisabledButton: Story = {
     disabled: true,
   },
 };
-

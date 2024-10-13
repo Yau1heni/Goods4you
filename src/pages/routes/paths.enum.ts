@@ -1,5 +1,6 @@
 export enum Paths {
-    CATALOG = "/",
-    PRODUCT = '/product/:productId',
-    CART = '/cart',
+  CATALOG = '/',
+  PRODUCT = '/product/:productId',
+  CART = '/cart',
+  LOGIN = '/login',
 }

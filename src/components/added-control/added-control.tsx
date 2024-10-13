@@ -1,37 +1,63 @@
-import Increase from '@/assets/svg/plus.svg?react'
-import Decrease from '@/assets/svg/minus.svg?react'
-import styles from './added-control.module.css'
-import {Button} from "@/components";
-import {FC} from 'react';
+import Increase from '@/assets/svg/plus.svg?react';
+import Decrease from '@/assets/svg/minus.svg?react';
+import styles from './added-control.module.css';
+import { Button } from '@/components';
+import { FC } from 'react';
+import { updateCart } from '@/store/slices/carts-slice/cart-slice.ts';
+import { useAppDispatch, useAppSelector } from '@/hooks';
+import { UpdateMode } from '@/types';
+import { mainSelectors } from '@/store';
 
 type AddedControlProps = {
-    amountProducts: number
-}
+  quantityProducts: number;
+  id: number;
+  refetch?: () => void;
+  stock?: number;
+};
 
-export const AddedControl: FC<AddedControlProps> = ({amountProducts}) => {
-    // const [amountProducts, setAmountProducts] = useState(1)
+export const AddedControl: FC<AddedControlProps> = (props) => {
+  const { quantityProducts, id, refetch, stock } = props;
+  const dispatch = useAppDispatch();
+  const isLoading = useAppSelector(mainSelectors.isLoading);
 
-    const increaseAmountProductsHandler = () => {
-        // setAmountProducts(prevState => prevState + 1)
+  const increaseQuantityHandler = () => {
+    dispatch(updateCart({ id, updateMode: UpdateMode.INCREASE }));
+    if (refetch) {
+      refetch();
     }
+  };
 
-    const decreaseAmountProductsHandler = () => {
-        // setAmountProducts(prevState => prevState - 1)
+  const decreaseQuantityHandler = () => {
+    const mode = quantityProducts > 1 ? UpdateMode.DECREASE : UpdateMode.DELETE;
+    dispatch(updateCart({ id, updateMode: mode }));
+    if (refetch) {
+      refetch();
     }
+  };
 
-    const itemsText = amountProducts <= 1 ? 'item' : 'items'
+  const itemsText = quantityProducts <= 1 ? 'item' : 'items';
 
-    return (
-        <div className={styles.addedControl}>
-            <Button className={styles.button} disabled={amountProducts === 0} onClick={decreaseAmountProductsHandler}>
-                <Decrease/>
-            </Button>
-            <div className={styles.textContainer}>
-                <p className={styles.text}>{amountProducts} {itemsText}</p>
-            </div>
-            <Button className={styles.button} onClick={increaseAmountProductsHandler}>
-                <Increase/>
-            </Button>
-        </div>
-    );
+  return (
+    <div className={styles.addedControl}>
+      <Button
+        className={styles.button}
+        disabled={quantityProducts === 0 || isLoading}
+        onClick={decreaseQuantityHandler}
+      >
+        <Decrease />
+      </Button>
+      <div className={styles.textContainer}>
+        <p className={styles.text}>
+          {quantityProducts} {itemsText}
+        </p>
+      </div>
+      <Button
+        disabled={stock === quantityProducts || isLoading}
+        className={styles.button}
+        onClick={increaseQuantityHandler}
+      >
+        <Increase />
+      </Button>
+    </div>
+  );
 };

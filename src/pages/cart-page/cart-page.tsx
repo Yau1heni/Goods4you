@@ -1,14 +1,14 @@
-import {Cart, Layout} from "@/components";
-import {useEffect} from "react";
+import { Cart, Layout } from '@/components';
+import { useEffect } from 'react';
 
 export const CartPage = () => {
-    useEffect(() => {
-        document.title = 'My cart | Goods4you';
-    }, []);
+  useEffect(() => {
+    document.title = 'My cart | Goods4you';
+  }, []);
 
-    return (
-        <Layout>
-            <Cart/>
-        </Layout>
-    );
+  return (
+    <Layout>
+      <Cart />
+    </Layout>
+  );
 };

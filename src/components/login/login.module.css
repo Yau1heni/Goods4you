@@ -1,0 +1,13 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  height: calc(100vh - 138px);
+  margin-top: 48px;
+}
+
+.title {
+  margin-top: 92px;
+  margin-bottom: 48px;
+  text-align: center;
+}

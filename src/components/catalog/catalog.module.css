@@ -1,33 +1,20 @@
 .catalog {
-    padding-top: 48px;
-    padding-bottom: 48px;
-    position: relative;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  position: relative;
 }
 
 .title {
-    font-family: var(--font-family-bold), sans-serif;
-    font-size: var(--font-size-3xl);
-    line-height: 156%;
-    color: var(--color-gray-900);
+  font-family: var(--font-family-bold), sans-serif;
+  font-size: var(--font-size-3xl);
+  line-height: 156%;
+  color: var(--color-gray-900);
 }
 
 .input {
-    border-radius: 4px;
-    padding: 20px;
-    margin: 48px 0;
-    width: 100%;
-    background-color: var(--color-gray-100);
-
-    font-family: var(--font-family-regular), sans-serif;
-    font-size: var(--font-size-m);
-    line-height: 137%;
-    color: var(--color-gray-900);
-}
-
-input::placeholder {
-    color: var(--color-gray-500);
+  margin: 48px 0;
 }
 
 .showMore {
-    margin: 0 auto;
+  margin: 0 auto;
 }
