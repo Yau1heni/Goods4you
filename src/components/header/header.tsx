@@ -3,45 +3,21 @@ import { Link as ScrollLink } from 'react-scroll';
 import commonStyles from '@/styles/common.module.css';
 import { clsx } from 'clsx';
 import { MainTitle } from '@/components/main-title/main-title.tsx';
-import { useAppDispatch, useAppSelector } from '@/hooks';
-import { cartsSelectors, getCarts } from '@/store';
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import { LinkWithCounter } from '@/components';
-import { useLazyMeQuery } from '@/services/login-api/login-api.ts';
-import { localStorageService } from '@/services';
-import { LOCAL_STORAGE_KEYS } from '@/constants';
-import { Navigate } from 'react-router-dom';
-import { Paths } from '@/pages';
+import { useAppSelector } from '@/hooks';
+import { cartsSelectors } from '@/store';
+import { useMeQuery } from '@/services/login-api/login-api.ts';
 
 type HeaderProps = {
   isWithNav?: boolean;
+  totalQuantity?: number;
 };
 
 export const Header: FC<HeaderProps> = (props) => {
   const { isWithNav = true } = props;
-
-  const [me, { data }] = useLazyMeQuery();
-
-  const dispatch = useAppDispatch();
   const totalQuantity = useAppSelector(cartsSelectors.totalQuantity);
-
-  const accessToken = localStorageService.getItem(LOCAL_STORAGE_KEYS.AUTH_TOKEN);
-
-  useEffect(() => {
-    if (accessToken) {
-      me()
-        .unwrap()
-        .then((value) => {
-          if (!totalQuantity) {
-            dispatch(getCarts({ userId: value.id }));
-          }
-        });
-    }
-  }, [dispatch, totalQuantity, accessToken]);
-
-  if (!accessToken) {
-    return <Navigate to={Paths.LOGIN} />;
-  }
+  const {data} = useMeQuery();
 
   return (
     <header className={styles.header}>

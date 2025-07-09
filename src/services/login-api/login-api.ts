@@ -22,4 +22,4 @@ export const loginApi = createApi({
   }),
 });
 
-export const { useLoginMutation, useLazyMeQuery } = loginApi;
+export const { useLoginMutation, useLazyMeQuery, useMeQuery } = loginApi;

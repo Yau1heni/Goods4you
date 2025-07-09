@@ -1,6 +1,6 @@
 import { localStorageService } from '@/services';
 import { LOCAL_STORAGE_KEYS } from '@/constants';
-import { Paths } from '@/pages';
+import { Paths } from './paths.enum';
 import { Navigate, Outlet } from 'react-router-dom';
 
 export const ProtectedRoutes = () => {

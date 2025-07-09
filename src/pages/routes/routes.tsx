@@ -1,8 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { CartPage, ContentPage, ErrorPage, ProductPage } from '@/pages';
+import { CartPage, ContentPage, ErrorPage, ProductPage, } from '@/pages';
 import { Paths } from './paths.enum.ts';
+import { ProtectedRoutes } from './protected-routes.tsx';
 import { LoginPage } from '@/pages/login-page/login-page.tsx';
-import { ProtectedRoutes } from '@/components';
 
 export const router = createBrowserRouter([
   {
