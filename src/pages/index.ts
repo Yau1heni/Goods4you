@@ -4,3 +4,4 @@ export { ContentPage } from './content-page/content-page.tsx';
 export { ProductPage } from './product-page/product-page.tsx';
 export { router } from './routes/routes.tsx';
 export { Paths } from './routes/paths.enum.ts';
+export { ProtectedRoutes } from './routes/protected-routes.tsx';

@@ -30,7 +30,6 @@ export const slice = createSlice({
       }
     },
     addProduct(state, action: PayloadAction<{ product: CartProduct; isFromDraft?: boolean }>) {
-      // ?????UPDATEDPRODUCT или нет
       if (state.carts !== null) {
         state.carts.products.push(action.payload.product);
       }
@@ -119,6 +118,7 @@ export const addProductToCart = createMainAsyncThunk<
   async ({ product, isFromDraft = false }, { rejectWithValue, dispatch, getState }) => {
     try {
       dispatch(cartsActions.addProduct({ product, isFromDraft }));
+      console.log(getState(), 'getState()');
 
       const { carts } = getState().carts;
       const { products, id } = carts as Cart;

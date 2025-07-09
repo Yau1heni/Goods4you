@@ -17,7 +17,7 @@ export const CartInfo: FC<CartInfoProps> = ({ carts }) => {
       </div>
       <div className={styles.textContainer}>
         <p className={clsx(styles.textMedium, styles.textGray)}>Price without discount</p>
-        <p className={clsx(styles.textMedium, styles.textDark)}>${carts?.total || 0}</p>
+        <p className={clsx(styles.textMedium, styles.textDark)}>${roundToTwoDecimals(carts?.total || 0)}</p>
       </div>
       <div className={clsx(styles.textContainer, styles.textTotalPrice)}>
         <p className={clsx(styles.textLarge, styles.textGray)}>Total price</p>

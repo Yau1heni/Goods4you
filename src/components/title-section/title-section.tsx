@@ -14,5 +14,9 @@ export const TitleSection: FC<TitleSectionProps> = (props) => {
 
   const finalClassName = clsx(styles.title, color === Theme.DARK && styles.dark, className);
 
-  return <h2 className={finalClassName}>{title}</h2>;
+  return (
+    <>
+      <h2 className={finalClassName}>{title}</h2>
+    </>
+  );
 };

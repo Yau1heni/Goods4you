@@ -10,6 +10,8 @@ export const Login = () => {
     <section className={clsx(styles.login, commonStyles.container)}>
       <div>
         <TitleSection className={styles.title} color={Theme.DARK} title={'Sign In'} />
+        <p className={styles.text}>Это демо версия приложения</p>
+        <p className={styles.text}>имя и пароль пользователя нельзя поменять</p>
         <LoginBody />
       </div>
     </section>
