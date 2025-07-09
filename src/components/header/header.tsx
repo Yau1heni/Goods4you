@@ -17,7 +17,10 @@ type HeaderProps = {
 export const Header: FC<HeaderProps> = (props) => {
   const { isWithNav = true } = props;
   const totalQuantity = useAppSelector(cartsSelectors.totalQuantity);
-  const {data} = useMeQuery();
+
+  const {data} = useMeQuery(undefined, {
+    skip: !totalQuantity
+  });
 
   return (
     <header className={styles.header}>
