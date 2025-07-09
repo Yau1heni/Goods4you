@@ -17,12 +17,14 @@ type Story = StoryObj<typeof meta>;
 
 export const AddedControlWithOneItem: Story = {
   args: {
-    amountProducts: 1,
+    quantityProducts: 1,
+    id: 1
   },
 };
 
 export const AddedControlMultiItem: Story = {
   args: {
-    amountProducts: 5,
+    quantityProducts: 5,
+    id: 2
   },
 };

@@ -32,4 +32,6 @@ export const router = createBrowserRouter([
       },
     ],
   },
-]);
+], {
+  basename: '/Goods4you'
+});

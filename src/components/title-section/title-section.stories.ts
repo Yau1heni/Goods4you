@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { TitleSection } from './title-section';
-
 import '@/styles/index.css';
+import { Theme } from '@/types';
 
 const meta = {
   title: 'atom/TitleSection',
@@ -18,13 +18,13 @@ type Story = StoryObj<typeof meta>;
 export const TitleDark: Story = {
   args: {
     title: 'Title dark',
-    color: 'dark',
+    color: Theme.DARK,
   },
 };
 
 export const TitleLight: Story = {
   args: {
     title: 'Title light',
-    color: 'light',
+    color: Theme.LIGHT,
   },
 };

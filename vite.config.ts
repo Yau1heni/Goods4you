@@ -10,6 +10,7 @@ export default defineConfig({
         host: true,
         port: 3000,
     },
+    base: '/Goods4you',
 
     resolve: {
         alias: [{find: '@', replacement: path.resolve(__dirname, 'src')}],
