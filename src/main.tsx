@@ -7,12 +7,13 @@ import 'slick-carousel/slick/slick-theme.css';
 import { Provider } from 'react-redux';
 import { store } from '@/store';
 import { GlobalStatus } from '@/components';
-import { App } from '@/app/app.tsx';
+import { router } from '@/pages';
+import { RouterProvider } from 'react-router-dom';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Provider store={store}>
-      <App />
+      <RouterProvider router={router} />
       <GlobalStatus />
     </Provider>
   </StrictMode>
